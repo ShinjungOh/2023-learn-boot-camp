@@ -27,7 +27,62 @@ const MyPage = () => {
                     </MenuList>
                 </Menu>
                 <Line></Line>
-                <div>mypage</div>
+                <BoardContainer>
+                    <QuestionContainer>
+                        <QuestionBox>
+                            <Label>Q.01</Label>
+                            <Question>리뷰 작성은 어떻게 하나요?</Question>
+                        </QuestionBox>
+                        <ViewMoreIconBox>
+                            <ViewMoreIcon>></ViewMoreIcon>
+                        </ViewMoreIconBox>
+                    </QuestionContainer>
+                    <QuestionContainer>
+                        <QuestionBox>
+                            <Label>Q.02</Label>
+                            <Question>리뷰 수정/삭제는 어떻게 하나요?</Question>
+                        </QuestionBox>
+                        <ViewMoreIconBox>
+                            <ViewMoreIcon>></ViewMoreIcon>
+                        </ViewMoreIconBox>
+                    </QuestionContainer>
+                    <QuestionContainer>
+                        <QuestionBox>
+                            <Label>Q.03</Label>
+                            <Question>아이디/비밀번호를 잊어버렸어요</Question>
+                        </QuestionBox>
+                        <ViewMoreIconBox>
+                            <ViewMoreIcon>></ViewMoreIcon>
+                        </ViewMoreIconBox>
+                    </QuestionContainer>
+                    <QuestionContainer>
+                        <QuestionBox>
+                            <Label>Q.04</Label>
+                            <Question>회원탈퇴를 하고싶어요.</Question>
+                        </QuestionBox>
+                        <ViewMoreIconBox>
+                            <ViewMoreIcon>></ViewMoreIcon>
+                        </ViewMoreIconBox>
+                    </QuestionContainer>
+                    <QuestionContainer>
+                        <QuestionBox>
+                            <Label>Q.05</Label>
+                            <Question>출발지 설정은 어떻게 하나요?</Question>
+                        </QuestionBox>
+                        <ViewMoreIconBox>
+                            <ViewMoreIcon>></ViewMoreIcon>
+                        </ViewMoreIconBox>
+                    </QuestionContainer>
+                    <QuestionContainer>
+                        <QuestionBox>
+                            <Label>Q.06</Label>
+                            <Question>비밀번호를 변경하고 싶어요</Question>
+                        </QuestionBox>
+                        <ViewMoreIconBox>
+                            <ViewMoreIcon>></ViewMoreIcon>
+                        </ViewMoreIconBox>
+                    </QuestionContainer>
+                </BoardContainer>
                 <NavBar>
                     <IconContainer>
                         <IconBox>
@@ -57,8 +112,7 @@ export default MyPage;
 
 const Container = styled.div`
   width: 640px;
-  height: 1138px;
-  border: 1px solid grey;
+  height: 1096px;
 `;
 
 const Header = styled.div`
@@ -72,14 +126,11 @@ const Header = styled.div`
 
 const Title = styled.h2`
   width: 212px;
-  //height: 64px;
   font-size: 40px;
   margin: 0;
 `;
 
 const ImageContainer = styled.div`
-  //width: 640px;
-  //height: 1138px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -93,8 +144,6 @@ const Image = styled.img`
 `;
 
 const UserName = styled.div`
-  //width: 67px;
-  //height: 35px;
   font-size: 24px;
   font-weight: 700;
   margin-left: 19px;
@@ -108,7 +157,7 @@ const UserName = styled.div`
 const ArrowContainer = styled.div`
   width: 28px;
   height: 28px;
-  margin-left: 2px;
+  margin-left: 4px;
 `;
 
 const Arrow = styled.div`
@@ -148,12 +197,65 @@ const Line = styled.div`
   border: 1px solid #CACACA;
 `;
 
+const BoardContainer = styled.div`
+  width: 640px;
+  height: 695px;
+`;
+
+const QuestionContainer = styled.div`
+  height: 65px;
+  padding: 25px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const QuestionBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+const Label = styled.div`
+  width: 43px;
+  height: 26px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #ADADAD;
+`;
+
+const Question = styled.div`
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+`;
+
+const ViewMoreIconBox = styled.div`
+  width: 60px;
+  height: 61px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ViewMoreIcon = styled.div`
+  width: 16px;
+  height: 16px;
+  transform: rotate(90deg);
+  color: #CACACA;
+  border: 2px;
+  font-size: 30px;
+`;
+
 const NavBar = styled.div`
   width: 640px;
   height: 96px;
-  border: 1px solid #DCDCDC;
-  position: relative;
-  top: 63%;
+  margin-top: 30px;
+  border-top: 1px solid #DCDCDC;
 `;
 
 const IconContainer = styled.div`
@@ -188,7 +290,7 @@ const IconText = styled.div`
   font-size: 16px;
   line-height: 23.17px;
   text-align: center;
-  
+
   &:hover {
     color: #FF1B6D
   }
