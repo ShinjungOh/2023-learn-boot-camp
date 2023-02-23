@@ -8,12 +8,13 @@ const MyPage = () => {
             <Container>
                 <Header>
                     <Title>마이</Title>
+                    <SearchIcon src="/ic-58-main-search-black 1.png"/>
                     <ImageContainer>
                         <Image src="/userImage.png"/>
                         <UserName>
                             임정아
                             <ArrowContainer>
-                                <Arrow>></Arrow>
+                                <Arrow src="/ic-28-arrow 1.png"/>
                             </ArrowContainer>
                         </UserName>
                     </ImageContainer>
@@ -26,7 +27,6 @@ const MyPage = () => {
                         <MenuItem>Q&A</MenuItem>
                     </MenuList>
                 </Menu>
-                <Line></Line>
                 <BoardContainer>
                     <QuestionContainer>
                         <QuestionBox>
@@ -34,7 +34,7 @@ const MyPage = () => {
                             <Question>리뷰 작성은 어떻게 하나요?</Question>
                         </QuestionBox>
                         <ViewMoreIconBox>
-                            <ViewMoreIcon>></ViewMoreIcon>
+                            <ViewMoreIcon src="/ic-70-arrow-right.png"/>
                         </ViewMoreIconBox>
                     </QuestionContainer>
                     <QuestionContainer>
@@ -43,7 +43,7 @@ const MyPage = () => {
                             <Question>리뷰 수정/삭제는 어떻게 하나요?</Question>
                         </QuestionBox>
                         <ViewMoreIconBox>
-                            <ViewMoreIcon>></ViewMoreIcon>
+                            <ViewMoreIcon src="/ic-70-arrow-right.png"/>
                         </ViewMoreIconBox>
                     </QuestionContainer>
                     <QuestionContainer>
@@ -52,7 +52,7 @@ const MyPage = () => {
                             <Question>아이디/비밀번호를 잊어버렸어요</Question>
                         </QuestionBox>
                         <ViewMoreIconBox>
-                            <ViewMoreIcon>></ViewMoreIcon>
+                            <ViewMoreIcon src="/ic-70-arrow-right.png"/>
                         </ViewMoreIconBox>
                     </QuestionContainer>
                     <QuestionContainer>
@@ -61,7 +61,7 @@ const MyPage = () => {
                             <Question>회원탈퇴를 하고싶어요.</Question>
                         </QuestionBox>
                         <ViewMoreIconBox>
-                            <ViewMoreIcon>></ViewMoreIcon>
+                            <ViewMoreIcon src="/ic-70-arrow-right.png"/>
                         </ViewMoreIconBox>
                     </QuestionContainer>
                     <QuestionContainer>
@@ -70,7 +70,7 @@ const MyPage = () => {
                             <Question>출발지 설정은 어떻게 하나요?</Question>
                         </QuestionBox>
                         <ViewMoreIconBox>
-                            <ViewMoreIcon>></ViewMoreIcon>
+                            <ViewMoreIcon src="/ic-70-arrow-right.png"/>
                         </ViewMoreIconBox>
                     </QuestionContainer>
                     <QuestionContainer>
@@ -79,26 +79,32 @@ const MyPage = () => {
                             <Question>비밀번호를 변경하고 싶어요</Question>
                         </QuestionBox>
                         <ViewMoreIconBox>
-                            <ViewMoreIcon>></ViewMoreIcon>
+                            <ViewMoreIcon src="/ic-70-arrow-right.png"/>
                         </ViewMoreIconBox>
                     </QuestionContainer>
                 </BoardContainer>
                 <NavBar>
                     <IconContainer>
                         <IconBox>
-                            <Icon src="/userImage.png"/>
+                            <Icon src="/home.png"/>
                             <IconText>홈</IconText>
                         </IconBox>
+                    </IconContainer>
+                    <IconContainer>
                         <IconBox>
-                            <Icon src="/userImage.png"/>
+                            <Icon src="/mappin.png"/>
                             <IconText>잇츠로드</IconText>
                         </IconBox>
+                    </IconContainer>
+                    <IconContainer>
                         <IconBox>
-                            <Icon src="/userImage.png"/>
+                            <Icon src="/heart.png"/>
                             <IconText>마이찜</IconText>
                         </IconBox>
+                    </IconContainer>
+                    <IconContainer>
                         <IconBox>
-                            <Icon src="/userImage.png"/>
+                            <Icon src="/myprofile.png"/>
                             <IconText>마이</IconText>
                         </IconBox>
                     </IconContainer>
@@ -128,6 +134,12 @@ const Title = styled.h2`
   width: 212px;
   font-size: 40px;
   margin: 0;
+`;
+
+const SearchIcon = styled.img`
+  position: absolute;
+  top: 42px;
+  left: 570px;
 `;
 
 const ImageContainer = styled.div`
@@ -160,14 +172,13 @@ const ArrowContainer = styled.div`
   margin-left: 4px;
 `;
 
-const Arrow = styled.div`
-  width: 12px;
-  height: 12px;
+const Arrow = styled.img`
   color: #CACACA;
 `;
 
 const Menu = styled.div`
   margin-top: 39px;
+  height: 43px;
 `;
 
 const MenuList = styled.ul`
@@ -188,18 +199,16 @@ const MenuItem = styled.li`
 
   &:hover {
     color: #FF1B6D;
+    //text-decoration: underline 2px solid #FF1B6D;
+    border-bottom: 2px solid #FF1B6D;
   }
-`;
-
-const Line = styled.div`
-  width: 640px;
-  margin-top: 58px;
-  border: 1px solid #CACACA;
 `;
 
 const BoardContainer = styled.div`
   width: 640px;
   height: 695px;
+  margin-top: 58px;
+  border-top: 1px solid #CACACA;
 `;
 
 const QuestionContainer = styled.div`
@@ -240,12 +249,10 @@ const ViewMoreIconBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
-const ViewMoreIcon = styled.div`
-  width: 16px;
-  height: 16px;
-  transform: rotate(90deg);
+const ViewMoreIcon = styled.img`
   color: #CACACA;
   border: 2px;
   font-size: 30px;
@@ -254,14 +261,17 @@ const ViewMoreIcon = styled.div`
 const NavBar = styled.div`
   width: 640px;
   height: 96px;
-  margin-top: 30px;
+  margin-top: 20px;
   border-top: 1px solid #DCDCDC;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
 const IconContainer = styled.div`
-  width: 640px;
+  width: 160px;
   height: 96px;
-  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -270,7 +280,7 @@ const IconContainer = styled.div`
 
 const IconBox = styled.div`
   width: 40px;
-  height: 40px;
+  margin-top: 9px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -280,16 +290,18 @@ const IconBox = styled.div`
 const Icon = styled.img`
   width: 40px;
   height: 40px;
+  object-fit: contain;
 `;
 
 const IconText = styled.div`
   width: 81px;
-  height: 48px;
   margin-top: 9px;
+  margin-bottom: 8px;
   font-weight: 400;
   font-size: 16px;
   line-height: 23.17px;
   text-align: center;
+  color: #ADADAD;
 
   &:hover {
     color: #FF1B6D
